@@ -222,6 +222,14 @@ Example configuration:
 }
 ```
 
+# Important Note
+Please use your api key when running the code locally for these models (Gemini, Claude or OpenAI)
+The private keys are decomissioned if pushed to Github because they are
+free tier and aren't publicly accessible
+
+The keys would be stored in secrets manager and read from there instead of storing
+in appsettings and pushing to Github
+
 Benefits:
 
 - Easy model switching
@@ -307,6 +315,8 @@ This helps detect regressions if prompts or models change.
 
 # UI
 
+Please find the UI Repo here - https://github.com/Vrittik/AI-Goal-Coach-UI.git
+
 The React interface provides:
 
 1. Goal input textbox
@@ -359,11 +369,11 @@ The system walkthrough is structured into three sections.
 
 ## 1. Application Demo (0–5 minutes)
 
-- Show the UI
-- Enter a vague goal
-- Click **Refine**
-- Display the structured AI output
-- Show console logs demonstrating:
+- Showing the UI
+- Entering a vague goal
+- Clicking **Refine**
+- Displaying the structured AI output
+- Showing console logs demonstrating:
   - input
   - output
   - latency
@@ -371,13 +381,13 @@ The system walkthrough is structured into three sections.
 
 ## 2. Evaluation Framework (5–10 minutes)
 
-Run the evaluation project:
+Running the evaluation project:
 
 ```
 dotnet run --project AIGoalCoach.Evals
 ```
 
-Demonstrate:
+Demonstrating:
 
 - structured output validation
 - adversarial test case
@@ -385,7 +395,7 @@ Demonstrate:
 
 ## 3. System Design Explanation (10–15 minutes)
 
-Explain architecture and design decisions:
+Explaining architecture and design decisions:
 
 - layered architecture
 - configuration-driven AI clients
@@ -393,7 +403,7 @@ Explain architecture and design decisions:
 - telemetry logging
 - model fallback strategy
 
-Discuss how the system could scale and how new models can be integrated without major changes.
+Discussing how the system could scale and how new models can be integrated without major changes.
 
 ---
 
@@ -457,7 +467,7 @@ If the system scaled to 10,000 users, improvements would include:
 2. Queue-based AI processing
 3. Model fallback strategies
 4. Persistent storage (Postgres / DynamoDB)
-5. Rate limiting
+5. Rate limiting for goal refine api
 6. Distributed tracing
 7. Circuit breakers for AI provider failures
 
