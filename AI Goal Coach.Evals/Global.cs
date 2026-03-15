@@ -1,0 +1,9 @@
+﻿global using AI_Goal_Coach.AIClient;
+global using AI_Goal_Coach.AIClient.Clients;
+global using AI_Goal_Coach.Evals;
+global using AI_Goal_Coach.HttpClientServices;
+global using AIGoalCoach.AIClient;
+global using AIGoalCoach.AIClient.Telemetry;
+global using AIGoalCoach.AIClient.Utils;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;

@@ -1,0 +1,14 @@
+﻿global using Microsoft.AspNetCore.Mvc;
+global using AI_Goal_Coach.Domain.IDomainLogic;
+global using AI_Goal_Coach.Models.ApiRequest;
+global using AI_Goal_Coach.Models.ApiResponse;
+global using AI_Goal_Coach.AIClient;
+global using AI_Goal_Coach.AIClient.Clients;
+global using AI_Goal_Coach.Domain.DomainLogic;
+global using AI_Goal_Coach.Repository.IRepositories;
+global using AI_Goal_Coach.Repository.Repositories;
+global using AI_Goal_Coach.HttpClientServices;
+global using AIGoalCoach.AIClient;
+global using AIGoalCoach.AIClient.Telemetry;
+global using AIGoalCoach.AIClient.Utils;
+global using Microsoft.AspNetCore.Diagnostics;
