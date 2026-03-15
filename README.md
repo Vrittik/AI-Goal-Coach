@@ -173,12 +173,16 @@ Example configuration:
     "Anthropic": {
       "Claude_Sonnet_3_5": {
         "ApiKey": "YOUR_API_KEY",
-        "Url": "https://api.anthropic.com/v1/messages"
+        "Url": "https://api.anthropic.com/v1/messages",
+        "AnthropicVersion" : "2023-0-01"  // Each provider can have certain different configs
       }
     }
   }
 }
 ```
+
+We have defined these configurations in appsettings so that production can use
+paid keys whereas development can use free keys for development purposes.
 
 How to Switch Models
 
