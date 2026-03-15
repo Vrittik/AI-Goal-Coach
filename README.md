@@ -148,6 +148,59 @@ Such inputs are rejected or returned with a low confidence score.
 
 ---
 
+## Switching AI Models / Providers
+
+The system is designed to support multiple AI providers through configuration and a client abstraction.
+
+All model configurations are defined in `appsettings.json` under the `Clients` section.  
+Each provider (Gemini, OpenAI, Anthropic, etc.) can define multiple models with their API key and endpoint.
+
+Example configuration:
+
+```
+{
+  "Clients": {
+    "Gemini": {
+      "Gemini_Flash": {
+        "ApiKey": "YOUR_API_KEY",
+        "Url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent"
+      },
+      "Gemini_Flash_V2": {
+        "ApiKey": "YOUR_API_KEY",
+        "Url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent"
+      }
+    },
+    "Anthropic": {
+      "Claude_Sonnet_3_5": {
+        "ApiKey": "YOUR_API_KEY",
+        "Url": "https://api.anthropic.com/v1/messages"
+      }
+    }
+  }
+}
+```
+
+How to Switch Models
+
+To switch from one model to another (for example Gemini → Claude):
+
+1. Add the new model configuration to appsettings.json.
+
+2. Implement a new AI client (for example ClaudeAIClient) that implements the IAIClient interface.
+
+3. Register the client in dependency injection.
+
+4. Update the clientId used by the AI client to point to the desired model.
+
+5. Define Your client in Clients Folder in AIClient Project
+
+6. Define Your client's configuration AI_Goal_Coach.Models.ClientConfig provider to read the values from appsettings and register it in AIClientServiceCollection 
+
+7. Once you inject the dependency in Program.cs, your Client will automatically be called from the domain logic as it depends on the interface
+
+Because the application uses a shared IAIClient abstraction and a centralized HTTP service, switching AI providers requires minimal changes and does not affect the rest of the system.
+
+
 # Observability
 
 Each AI request logs the following:
