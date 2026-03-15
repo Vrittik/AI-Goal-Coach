@@ -26,9 +26,10 @@
             int completionTokens)
         {
             _logger.LogInformation(
-                "RequestId:{requestId} | AI Response | Client:{clientId} | PromptTokens:{promptTokens} | CompletionTokens:{completionTokens}",
+                "RequestId:{requestId} | AI Response | Client:{clientId} | Output:{output} | PromptTokens:{promptTokens} | CompletionTokens:{completionTokens}",
                 requestId,
                 clientId,
+                output,
                 promptTokens,
                 completionTokens);
         }

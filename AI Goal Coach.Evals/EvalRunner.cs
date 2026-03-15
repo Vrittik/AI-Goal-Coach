@@ -56,7 +56,7 @@
             }
             catch
             {
-                Console.WriteLine("PASS (Rejected malicious input)\n");
+                Console.WriteLine("FAIL (Rejected malicious input)\n");
             }
         }
     }
